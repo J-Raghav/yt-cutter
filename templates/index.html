@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div id="container" class="d-flex align-items-center justify-content-center h-100 mx-auto">
+        <form id="video-url-form" class="d-flex" action="/submit-video-url" method="get">
+            <input class="form-control" type="text" name="video-url" id="video-url" placeholder="https://www.youtube.com/watch?v=8Pijva6-H68">
+            <input class="btn btn-dark d-inline" type="submit" id="submit-url" value="Submit"/>
+        </form>
+        <div id="video-info" class="d-none p-3 border shadow-sm m-lg-0 m-3">
+            <a class="title h5 text-dark text-decoration-none" href="#" target="blank"></a>
+            <img class="thumb mx-auto my-3 d-block" style="max-width: 90%;"/>
+            <div class="">
+                <form id="download-form" class="row justify-space-around" method="GET" action="{{ url_for('download_video') }}" >
+                    <input type="text" class="d-none" name="video-url" value="">
+                    <div class="col-6 col-md-4 p-2">
+                        <input class="form-control" type="number" name="start-time" id="start-time" min="0" title="Select start time in seconds" placeholder="Select start time in seconds" disabled>
+                    </div>
+                    <div class="col-6 col-md-4 p-2">
+                        <input class="form-control" type="number" name="end-time" id="end-time" min="0" title="Select end time in seconds" placeholder="Select end time in seconds" disabled>
+                    </div>
+                    <div class="col-6 col-md-4 p-2">
+                        <select class="form-control" name="video-quality" id="video-quality" title="Select Quality" disabled></select>
+                    </div>
+                    <div class="col-6 col-md-12  p-2">
+                        <input class="btn btn-primary btn-block" href="#" type="submit" name="download-video" id="download-video" value="Download" title="Download video"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+/* Fluid font size */
+html{
+    font-size: calc(16px + (20 - 12) * ((100vw - 300px) / (2300 - 300)));
+}
+
+#container{
+  width: 50%;
+}
+
+#video-url{
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-color: #343a40;
+}
+
+#submit-url{
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
+@media (max-width: 1076px) {
+}
+
+@media (max-width:576px) {
+  #container{
+    width: 100%;
+  }
+}

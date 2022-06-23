@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>{{ title }} - Wallpapers</title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap" rel="stylesheet"> -->
+		<style media="screen">
+/*			body{
+				background-attachment: fixed;
+				background-image: url('{{bg_image_url}}');
+				background-size: cover;
+				background-position: bottom;
+			} */
+
+		</style>
+	</head>
+	<body class='bg-light'>
+		<nav class="navbar fixed-top navbar-dark bg-dark">
+			<a href="{{ url_for('index') }}" class="navbar-brand">Youtube Downloader</a>
+		</nav>
+
+		<div id="main" class="p-0">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+		<!--<script src="{{ url_for('static', filename='js/script.js') }}"></script>-->	
+	</body>
+</html>

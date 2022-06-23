@@ -1,0 +1,8 @@
+__pycache__
+venv
+cached
+node_modules
+setup.bat
+package-lock.json
+*.mp4
+*.bak
